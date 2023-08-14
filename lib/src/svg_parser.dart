@@ -50,6 +50,7 @@ import 'dart:math';
 import 'dart:typed_data';
 
 import 'package:xml/xml_events.dart';
+
 import 'affine.dart';
 import 'common_noui.dart';
 import 'svg_graph.dart';
@@ -643,6 +644,7 @@ abstract class SvgParser extends GenericParser {
     if (id != null) {
       svg.idLookup[id] = n;
     }
+    n.id = id;
   }
 
   void _processInheritableText(

@@ -325,6 +325,8 @@ abstract class SvgNode {
   SIBlendMode? get blendMode;
 
   _SvgBoundary? _getUserSpaceBoundary(SvgTextAttributes ta);
+
+  String? id;
 }
 
 class _NullSink<T> implements Sink<T> {
@@ -492,6 +494,9 @@ abstract class SvgInheritableAttributesNode extends SvgInheritableAttributes
     }
     return this;
   }
+
+  @override
+  String? id;
 }
 
 class SvgPaint {
@@ -1419,6 +1424,9 @@ class SvgGradientNode implements SvgNode {
   /// Meaningless for us
   @override
   SIBlendMode get blendMode => unreachable(SIBlendMode.normal);
+
+  @override
+  String? id;
 }
 
 class SvgImage extends SvgInheritableAttributesNode with SvgTextFields {
